@@ -1,0 +1,10 @@
+flowchart LR
+  S[Interview speaker] -->|voice| M[Microphone]
+  I[Interviewer] -->|audible voice| M
+  N[Environmental noise] -->|sound| M
+  U[Operator: identity unverified] -->|Start Listening| B[Browser application]
+  M -->|permission-gated audio| B
+  B --> R[RMS level and elapsed turn time]
+  R --> P[GOOD / LAND IT / STOP]
+  P -->|documented visual feedback| S
+  R -.-> L[No speaker discrimination in supplied code]

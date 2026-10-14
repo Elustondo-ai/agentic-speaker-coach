@@ -1,0 +1,10 @@
+flowchart TB
+  subgraph Baseline["Current baseline: source-observed capability"]
+    A["Sound-level detection and turn timing"] --> B["Colored duration cues"]
+    C["No speaker identity or answer text"] -.-> B
+  end
+  subgraph Roadmap["Documented future intent: approval unverified"]
+    D["Identify Pablo versus interviewer"] --> E["Transcribe conversational turns"]
+    E --> F["Coach relevance, repetition and when to finish"]
+  end
+  B -. "documented future increments only" .-> D

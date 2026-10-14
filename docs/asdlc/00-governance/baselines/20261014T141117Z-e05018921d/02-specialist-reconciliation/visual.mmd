@@ -1,0 +1,8 @@
+flowchart TD
+ A["ASDLC-01: source above 25 / 35 seconds"] --> C["Specialist agreement"]
+ B["ASDLC-02: source above 25 / 35 seconds"] --> C
+ D["Plan and HLD: 45 / 75 seconds"] -. "CONTRADICTED current-code description" .-> C
+ E["ASDLC-02: automatic timing already exists"] --> F["Plan: automatic timing next increment"]
+ F --> G["Additional contradiction, not specialist disagreement"]
+ C --> H["Timing intent unresolved"]
+ G --> H

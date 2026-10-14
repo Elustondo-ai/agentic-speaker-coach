@@ -1,0 +1,17 @@
+{
+  "description": "ASDLC implementation gate; review and trust with /hooks.",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "'/Users/pablo.elustondo/Library/CloudStorage/GoogleDrive-pablo.elustondo@gmail.com/My Drive/1-GIT-PROJECTS/elustondoai/agentic-sandbox/.venv311/bin/python3' -B '/Users/pablo.elustondo/Library/CloudStorage/GoogleDrive-pablo.elustondo@gmail.com/My Drive/1-GIT-PROJECTS/elustondoai/agentic-sdlc-governance/asdlc/00-governance/src/cli_hook.py' '/Users/pablo.elustondo/Library/CloudStorage/GoogleDrive-pablo.elustondo@gmail.com/My Drive/1-GIT-PROJECTS/elustondoai/agentic-speaker-coach' || printf '%s\\n' '{\"hookSpecificOutput\": {\"hookEventName\": \"PreToolUse\", \"permissionDecision\": \"deny\", \"permissionDecisionReason\": \"IMPLEMENTATION BLOCKED\\nASDLC guard failed to execute.\"}}'",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}

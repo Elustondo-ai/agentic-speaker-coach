@@ -1,0 +1,7 @@
+flowchart TD
+  L["RMS > 0.02"] --> S["Speaking: last loud sample <300 ms ago"]
+  L --> T[Turn starts at first loud sample]
+  T --> P[Elapsed time includes short pauses]
+  T --> R["No loud sample for >2500 ms: reset"]
+  T --> C["Source cues: >25 s LAND IT; >35 s STOP"]
+  D[Documented cues: 45 / 75 seconds] -. Contradiction .-> C

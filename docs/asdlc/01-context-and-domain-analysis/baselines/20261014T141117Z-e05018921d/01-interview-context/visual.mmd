@@ -1,0 +1,7 @@
+flowchart LR
+  P["Pablo: answer speaker (documented)"] --> M[Microphone]
+  I["Interviewer (documented)"] --> M
+  N[Background noise] --> M
+  M --> B[Browser volume-based turn timer]
+  B --> V[GOOD / LAND IT / STOP]
+  V --> P

@@ -1,0 +1,11 @@
+flowchart TB
+  subgraph App[Application scope: browser]
+    H[index.html: controls and panel] --> J[app.js: microphone and timing]
+    J --> F[Interview timing feedback]
+  end
+  subgraph Tool[Auxiliary scope: VS Code documentation tooling]
+    E[PlantUML Open With extension] -->|opens source and requests preview| V[jebbs.plantuml]
+    V --> P[Documentation preview]
+  end
+  A[Interview user] --> H
+  D[Documentation author: inferred user] --> E

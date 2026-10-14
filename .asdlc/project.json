@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "provider": "elustondo.ai/asdlc",
+  "cli_version": "0.1.3",
+  "project_id": "agentic-speaker-coach",
+  "artifacts_root": "docs/asdlc",
+  "catalog_sha256": "f6aeb3811207ca069828956aa56f08f4f41f4d0a78dc9d8dd81fffb57ef71358",
+  "methodology_revision_at_init": "e3f150453976d602123b0032748b958d9b343173",
+  "installation_mode": "linked-development-checkout",
+  "initialized_at": "2026-10-14T02:06:23Z",
+  "stages": [
+    "00-governance",
+    "01-context-and-domain-analysis",
+    "02-intent",
+    "03-system-model-and-use-cases",
+    "04-benchmarks-test-strategy-and-success-criteria",
+    "05-high-level-solution-design-and-architecture",
+    "06-viable-proof-of-concept",
+    "07-planning",
+    "08-low-level-design",
+    "09-build-and-test-cycle",
+    "10-document-review-and-release",
+    "11-operational-reality-devops-and-user-acceptance",
+    "12-observability-insights-and-learning"
+  ]
+}
