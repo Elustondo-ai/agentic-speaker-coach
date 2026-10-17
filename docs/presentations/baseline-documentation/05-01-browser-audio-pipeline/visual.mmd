@@ -1,0 +1,24 @@
+flowchart TD
+  subgraph Browser[Browser runtime: source-observed]
+    HTML["index.html: layout and controls"] --> JS["app.js: event handlers"]
+    JS --> START["Start Listening: disable button; requesting permission"]
+    START --> GUM["getUserMedia: audio true"]
+    GUM --> STREAM[MediaStream]
+    STREAM --> SRC[MediaStreamAudioSourceNode]
+    CTX["AudioContext creation and resume"] --> SRC
+    SRC --> AN["AnalyserNode: fftSize 2048"]
+    AN --> BUF["Float32Array: time-domain samples"]
+    INTERVAL["setInterval: requested 100 ms"] --> TICK[tick]
+    BUF --> TICK
+    TICK --> RMS["RMS: sqrt of mean squared samples"]
+    RMS --> TURN["mic state: level, lastVoice, turnStart, speaking"]
+    TURN --> DUR["Elapsed turn duration from performance.now"]
+    DUR --> SET["setState: panel text and colors"]
+    TURN --> DEBUG["renderDebug: mic, speaking, duration, level"]
+    DUR --> DEBUG
+    JS --> MANUAL[Manual state buttons]
+    MANUAL --> SET
+    GUM -. caught setup failure .-> ERROR["error plus err.name; enable retry; debug zero"]
+    CTX -. caught setup failure .-> ERROR
+  end
+  MIC[Microphone and browser permission boundary] --> GUM

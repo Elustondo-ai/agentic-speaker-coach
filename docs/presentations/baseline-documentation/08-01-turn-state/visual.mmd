@@ -1,0 +1,11 @@
+flowchart TD
+ A[Read samples; calculate RMS] --> B{RMS > 0.02?}
+ B -- Yes --> C[Refresh lastVoice; start absent turn]
+ B -- No --> D[Retain timestamps]
+ C --> E[speaking = voice age < 300 ms]
+ D --> E
+ E --> F{Active turn and voice age > 2500 ms?}
+ F -- Yes --> G[Clear turnStart]
+ F -- No --> H[Retain turnStart]
+ G --> I[Compute elapsed duration; update panel and debug]
+ H --> I

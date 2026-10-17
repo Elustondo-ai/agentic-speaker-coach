@@ -1,0 +1,17 @@
+flowchart TD
+    P["Coordinator routing proposal: 00-routing"] --> R["Runner: isolated Codex processes; not native subagents"]
+    R --> A["01 Context: users and boundary"]
+    R --> B["02 Intent: outcome and capability status"]
+    R --> C["03 Use cases: journeys and turn model"]
+    R --> D["04 Benchmarks: claims and missing evidence"]
+    R --> E["05 Architecture: runtime and hosting boundaries"]
+    R --> F["08 Low-level design: exact source semantics"]
+    R --> G["11 Operations: configuration and acceptance gaps"]
+    A --> H["Governance reconciliation: this documentation capture"]
+    B --> H
+    C --> H
+    D --> H
+    E --> H
+    F --> H
+    G --> H
+    X["06, 07, 09, 10, 12 excluded from baseline assignments"] -.-> P

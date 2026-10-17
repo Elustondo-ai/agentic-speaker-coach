@@ -1,0 +1,9 @@
+flowchart LR
+    I["8 recorded invocations: routing plus 7 specialists"] --> S["All exit 0; execution and validation OK"]
+    S --> A["7 specialists: 6 artifacts each; promotion OK"]
+    A --> L["42 artifacts recorded; 21 documentation units"]
+    I --> T["Evidence limits: clipped result summaries and omitted events"]
+    T --> U["No complete event replay or native handoff proof"]
+    L --> B["Documentation evidence only"]
+    B -.-> N["Product runtime, deployment and acceptance remain unverified"]
+    V["Overall snapshot: RUNNING; source_modified=null"] --> U

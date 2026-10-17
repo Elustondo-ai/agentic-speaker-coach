@@ -1,0 +1,7 @@
+flowchart TD
+ A[GOOD; microphone off] --> B[Click Start Listening]
+ B --> C[Button disabled; requesting permission]
+ C --> D{Permission and audio setup succeed?}
+ D -->|Yes| E[Listening; button disabled; ticks update feedback]
+ D -->|Exception| F[Error name displayed; button enabled]
+ F -->|Retry| B

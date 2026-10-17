@@ -1,0 +1,9 @@
+flowchart LR
+  A[DOCUMENTED already proven and working today] --> D[Evidence comparison]
+  B[OBSERVED static code and workflow] --> D
+  C[UNVERIFIED runtime and interview observations] -.-> D
+  D --> E[CONTRADICTED documented 45/75 vs code 25/35 seconds]
+  D --> F[Acceptance outcome unknown]
+  F --> G[Missing deployment runs and deployed revision / URL]
+  F --> H[Missing browser and device observations]
+  F --> I[Missing realistic interview feedback and approval]

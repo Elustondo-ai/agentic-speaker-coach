@@ -1,0 +1,9 @@
+flowchart LR
+  P["Pablo: named intended speaker<br/>DOCUMENTED in plan"] --> S["Interview answer<br/>DOCUMENTED domain"]
+  I["Interviewer<br/>DOCUMENTED participant"] --> S
+  S --> M["Microphone input<br/>OBSERVED code boundary"]
+  N["Other loud sounds<br/>DOCUMENTED limitation"] --> M
+  M --> T["Meeting Helper<br/>volume-based turn timer"]
+  T --> F["GOOD / LAND IT / STOP<br/>OBSERVED display states"]
+  F --> P
+  U["Actual users, sessions and benefit<br/>UNVERIFIED"] -.-> P

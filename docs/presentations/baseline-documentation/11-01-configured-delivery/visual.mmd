@@ -1,0 +1,13 @@
+flowchart TD
+  A[OBSERVED workflow configuration] --> B[Push to main]
+  A --> C[PR targeting main: opened / synchronize / reopened]
+  B --> D[Ubuntu runner: checkout and install OIDC client]
+  C --> D
+  D --> E[Get ID token]
+  E --> F[Azure action v1: upload with secret and ID token]
+  F --> G[App root / - output . - API empty]
+  A --> H[PR targeting main: closed]
+  H --> I[Separate Ubuntu job: Azure action v1 close]
+  I --> J[No token inputs supplied in close step]
+  G -.-> K[UNVERIFIED deployment URL and successful upload]
+  J -.-> L[UNVERIFIED preview closure]

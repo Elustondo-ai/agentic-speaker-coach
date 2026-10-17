@@ -1,0 +1,11 @@
+flowchart TD
+ A[Elapsed duration including pauses] --> B{duration > 35 s?}
+ B -- Yes --> C[STOP: red / white]
+ B -- No --> D{duration > 25 s?}
+ D -- Yes --> E[LAND IT: gold / black]
+ D -- No --> F[GOOD: green / white]
+ C --> S[setState writes panel text and colors]
+ E --> S
+ F --> S
+ M[Manual data-state button] --> S
+ P[Documented 45 / 75 s: unresolved drift] -.-> A

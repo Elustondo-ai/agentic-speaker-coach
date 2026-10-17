@@ -1,8 +1,0 @@
-flowchart LR
-  U[Start Listening click] --> B[Browser microphone permission request]
-  M[Microphone stream] --> A
-  B --> A[AudioContext / AnalyserNode]
-  A --> R[RMS samples in browser]
-  R --> T[Turn timer]
-  T --> D[Panel and debug display]
-  B --> E[Error name displayed on failure]

@@ -1,0 +1,19 @@
+flowchart TD
+  T["tick: read RMS and performance.now"] --> Q{"RMS greater than 0.02?"}
+  Q -- Yes --> V["Refresh lastVoice; start absent turn"]
+  Q -- No --> HOLD
+  V --> HOLD["speaking = age of lastVoice less than 300 ms"]
+  HOLD --> RESET{"Active turn and voice age greater than 2500 ms?"}
+  RESET -- Yes --> ZERO["turnStart = null; duration = 0"]
+  RESET -- No --> D["duration = elapsed since turnStart, or zero if absent"]
+  ZERO --> S
+  D --> S{"duration greater than 35 s?"}
+  S -- Yes --> STOP["STOP: red / white"]
+  S -- No --> L{"duration greater than 25 s?"}
+  L -- Yes --> LAND["LAND IT: gold / black"]
+  L -- No --> GOOD["GOOD: green / white"]
+  STOP --> DOM[Panel and debug DOM updates]
+  LAND --> DOM
+  GOOD --> DOM
+  HLD["DOCUMENTED HLD: 45 / 75 s"] -. conflicting values .-> L
+  HLD -. conflicting values .-> S

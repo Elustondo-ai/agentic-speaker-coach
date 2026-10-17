@@ -1,0 +1,11 @@
+flowchart TD
+    D["DOCUMENTED: Plan and HLD timing 45 / 75 seconds"] --> C["CONTRADICTED: code uses strict greater than 25 / 35"]
+    S["Specialists 02, 03, 04, 05, 08, 11 preserve drift"] --> C
+    C --> H["Pending human decision: intended timing and boundary policy"]
+    A["Plan: automatic timing is a next increment"] --> B["Source: automatic feedback already assigned"]
+    B --> J["Pending clarification: chronology and baseline meaning"]
+    P["DOCUMENTED: already proven / working today"] --> U["UNVERIFIED: tests, calibration, deployment and acceptance"]
+    U --> K["Pending evidence and human acceptance decision"]
+    H --> N["No policy chosen; no approval recorded"]
+    J --> N
+    K --> N

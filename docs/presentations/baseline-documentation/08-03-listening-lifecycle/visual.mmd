@@ -1,0 +1,15 @@
+sequenceDiagram
+ participant U as Listen button
+ participant F as startListening
+ participant B as Browser APIs
+ U->>F: click
+ F->>U: disable
+ F->>F: requesting permission; renderDebug(0)
+ F->>B: getUserMedia audio=true
+ B-->>F: stream
+ F->>B: AudioContext; await resume
+ F->>B: analyser fftSize=2048; connect source
+ F->>F: allocate buffer; listening; setInterval 100 ms
+ F->>U: Listening; remains disabled
+ Note over F,B: Catch reports error name and enables retry
+ Note over F,B: No stop-listening cleanup path

@@ -1,0 +1,8 @@
+flowchart TD
+  S["OBSERVED: Start Listening disables button"] --> P["Request microphone"]
+  P --> A["Create and resume AudioContext; connect analyser"]
+  A --> L["Listening status and scheduled ticks"]
+  P --> E["Caught error: display name and enable retry"]
+  A --> E
+  L --> U["UNVERIFIED: browser/device operation"]
+  E --> U

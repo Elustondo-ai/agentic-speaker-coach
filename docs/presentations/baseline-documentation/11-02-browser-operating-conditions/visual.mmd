@@ -1,0 +1,11 @@
+flowchart TD
+  A[UNVERIFIED compatible origin and browser APIs] -.-> B[OBSERVED Start Listening click]
+  B --> C[Disable button - requesting permission]
+  C --> D[getUserMedia audio request]
+  D --> E[AudioContext create and resume]
+  E --> F[Analyser setup - listening - 100 ms interval requested]
+  D --> G[Caught error]
+  E --> G
+  G --> H[Show error name - re-enable retry]
+  F --> I[Local RMS and elapsed-turn feedback]
+  F -.-> J[UNVERIFIED actual device capture and scheduling]

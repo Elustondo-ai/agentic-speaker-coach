@@ -1,8 +1,0 @@
-flowchart TD
- A["Record: approval_granted false"] --> R["REVIEW REQUIRED: no decision recorded"]
- B["Timing and Plan contradictions"] --> R
- C["Environment and validation evidence absent"] --> R
- D["Roadmap scope and partial capture unresolved"] --> R
- R --> E["Pending human decisions"]
- F["Authoritative sprint state and gates unavailable"] --> G["BLOCKED dependent project actions"]
- H["Explicit baseline-only experiment"] --> I["Coordinator documentation only"]

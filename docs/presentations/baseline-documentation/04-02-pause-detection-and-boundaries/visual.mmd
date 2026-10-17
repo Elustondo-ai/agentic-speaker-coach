@@ -1,0 +1,8 @@
+flowchart TD
+  A["OBSERVED: RMS greater than 0.02"] --> B["Refresh lastVoice; start absent turn"]
+  B --> C["Speaking: age less than 300 ms"]
+  B --> D["Reset: age greater than 2500 ms"]
+  D --> E["Elapsed duration includes retained pauses"]
+  E --> F["GOOD through 25 s; LAND IT above 25 through 35; STOP above 35"]
+  P["DOCUMENTED: 45 / 75 s"] -. "CONTRADICTED by source" .-> F
+  F --> Q["UNVERIFIED: actual pauses, noise and scheduling"]

@@ -1,0 +1,6 @@
+flowchart TD
+ A[Select Good, Land it or Stop] --> B[Panel shows selection]
+ B --> C{Listening ticks active?}
+ C -->|No| D[Selection persists until another panel update]
+ C -->|Yes| E[Next tick overwrites selection from turn duration]
+ F[Manual selection does not alter turn or microphone] -.-> B

@@ -1,7 +1,0 @@
-flowchart TD
- R["Routing OK: proposal only"] --> P["Planned: 01, 02, 03, 04, 05, 08, 10"]
- R --> A["Runner record: ASDLC-01 OK"]
- A --> B["Runner record: ASDLC-02 OK"]
- B --> C["Five supplied specialist units"]
- P -.-> D["03, 04, 05, 08, 10: execution unverified"]
- C --> E["Snapshot RUNNING and partial"]

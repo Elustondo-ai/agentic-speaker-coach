@@ -1,0 +1,20 @@
+flowchart LR
+  subgraph Hosting[Configured delivery: execution unverified]
+    EVENTS[Main push or non-closed main pull request] --> CI[GitHub Actions]
+    CI --> TOOLS[Workflow npm installs and OIDC token step]
+    TOOLS --> AZ["Azure Static Web Apps upload: app /, output ., API empty"]
+    CLOSED[Closed main pull request] --> CLOSE[Azure close action]
+  end
+  AZ -. configured static delivery .-> PAGE
+  subgraph Runtime[Browser application: source-observed]
+    PAGE[index.html] --> APP[app.js]
+    MIC[Microphone permission and stream] --> AUDIO[Web Audio and local RMS]
+    APP --> AUDIO
+    AUDIO --> DOM[Turn timing and DOM feedback]
+  end
+  subgraph Authoring[Editor-only documentation tooling]
+    PUML[HLD PlantUML source] --> SETTINGS[VS Code editor associations]
+    SETTINGS --> EXT[Local custom editor extension]
+    EXT --> PREVIEW[jebbs.plantuml preview command]
+    PREVIEW -. README conditional requirement .-> JAVA[Java and configured renderer]
+  end

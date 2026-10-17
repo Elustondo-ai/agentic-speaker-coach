@@ -1,0 +1,13 @@
+flowchart TD
+ A[No turn; duration zero; GOOD] -->|RMS above 0.02| B[Start turn; refresh last qualifying sound]
+ B --> C[Active turn]
+ C -->|More qualifying sound| D[Refresh last sound; retain start]
+ D --> C
+ C -->|Quiet at most 2500 ms| E[Retain start; elapsed time continues]
+ E --> C
+ C -->|Quiet more than 2500 ms| A
+ C --> F{Elapsed time}
+ F -->|At most 25 seconds| G[GOOD]
+ F -->|Above 25 through 35 seconds| H[LAND IT]
+ F -->|Above 35 seconds| I[STOP]
+ J[Intended speaker, other speaker or loud noise] -->|Same volume test| B

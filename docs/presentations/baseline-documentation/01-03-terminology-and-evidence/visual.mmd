@@ -1,0 +1,7 @@
+flowchart LR
+  Code["OBSERVED: HTML / JavaScript<br/>structure and constants"] --> Baseline["As-is context baseline"]
+  Docs["DOCUMENTED: Plan / HLD<br/>purpose and working claims"] --> Baseline
+  Config["OBSERVED: workflow / editor config<br/>configured capabilities"] --> Baseline
+  Run["DOCUMENTED: runner record<br/>isolated process, not native subagent"] --> Baseline
+  Drift["CONTRADICTED timing descriptions<br/>25/35 code versus 45/75 docs"] --> Baseline
+  Missing["UNVERIFIED: stakeholder interviews,<br/>usage, calibration, deployment outcomes"] -.-> Baseline

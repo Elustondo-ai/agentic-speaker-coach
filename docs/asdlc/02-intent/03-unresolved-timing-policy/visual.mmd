@@ -1,0 +1,8 @@
+flowchart TB
+    A["DOCUMENTED: 45 s LAND IT / 75 s STOP"] --> C["CONTRADICTED: Timing policy differs"]
+    B["OBSERVED code: LAND IT above 25 s / STOP above 35 s"] --> C
+    C --> D["UNVERIFIED: Intended and human-approved policy"]
+    E["OBSERVED code: Elapsed turn includes short pauses"] --> F["INFERRED: Turn length may differ from answer length"]
+    G["OBSERVED code: Reset after silence exceeds 2.5 s"] --> F
+    D --> H["REVIEW REQUIRED: Existing policy and acceptance evidence"]
+    F --> H

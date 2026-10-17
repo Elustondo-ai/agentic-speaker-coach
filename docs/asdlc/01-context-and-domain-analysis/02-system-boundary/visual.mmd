@@ -1,0 +1,13 @@
+flowchart TB
+  Person["User"] -->|Start Listening / manual controls| UI
+  Mic["Microphone via browser permission"] --> Audio
+  subgraph APP["Browser application: OBSERVED source"]
+    UI["index.html: panel and controls"]
+    Audio["app.js: Web Audio / volume / turn timing"] --> UI
+  end
+  subgraph TOOL["Separate documentation tooling: OBSERVED source"]
+    Author["Documentation maintainer: INFERRED role"] --> Editor["VS Code custom editor adapter"]
+    Editor --> Plant["PlantUML extension: declared dependency"]
+  end
+  Host["Azure Static Web Apps workflow<br/>OBSERVED configuration; execution UNVERIFIED"] -.->|configured static upload| APP
+  Docs["Plan and HLD<br/>DOCUMENTED claims"] -.->|describe| APP
